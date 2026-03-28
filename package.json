@@ -1,0 +1,17 @@
+{
+  "name": "fastify",
+  "version": "1.0.0",
+  "description": "Learning how to use Fastify, node's micro-framework",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan Oliveira",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^5.8.4"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2"
+  }
+}
