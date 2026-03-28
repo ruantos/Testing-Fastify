@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Learning how to use Fastify, node's micro-framework",
   "main": "server.ts",
+  "type": "module",
   "scripts": {
+    "dev": "tsx --watch src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Juan Oliveira",
@@ -12,6 +14,8 @@
     "fastify": "^5.8.4"
   },
   "devDependencies": {
+    "@types/node": "^25.5.0",
+    "tsx": "^4.21.0",
     "typescript": "^6.0.2"
   }
 }

@@ -1,8 +1,18 @@
-function calculateArea(side: number): number {
-  return side * side;
-}
+import Fastify from 'fastify';
 
-let num : number = 3;
+const app = Fastify({
+  logger: true
+});
 
-console.log(calculateArea(num));
+app.get('/', (request, reply) => {
+  reply.send({
+    message: "Mai é inteligente"
+  })
+})
 
+app.listen({
+  port: 3000,
+  host: "localhost"
+}).then(() => {
+  console.log("HTTP server running...")
+})
