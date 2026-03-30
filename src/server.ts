@@ -1,20 +1,23 @@
-// import Fastify from "fastify";
+import Fastify from "fastify";
+import { querier } from "./database.js";
 
-// const app = Fastify({
-//   logger: true
-// });
 
-console.log('oi')
+const app = Fastify({
+  logger: true
+});
 
-// app.get("/", (request, reply) => {
-//   reply.send({
-//     message: "Mai é inteligente"
-//   });
-// });
 
-// app.listen({
-//   port: 3000,
-//   host: "localhost"
-// }).then(() => {
-//   console.log("HTTP server running...");
-// });
+app.get("/", async () => {
+  const tables = await querier("sqlite_schema")
+    .select("*");
+
+  return tables;
+
+});
+
+app.listen({
+  port: 3000,
+  host: "localhost"
+}).then(() => {
+  console.log("HTTP server running on http://localhost:3000");
+});
