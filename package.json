@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsx --watch src/server.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Juan Oliveira",
@@ -14,8 +16,12 @@
     "fastify": "^5.8.4"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/node": "^25.5.0",
+    "eslint": "^10.1.0",
+    "globals": "^16.4.0",
     "tsx": "^4.21.0",
-    "typescript": "^6.0.2"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.2"
   }
 }
