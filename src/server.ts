@@ -6,7 +6,6 @@ const app = Fastify({
   logger: true
 });
 
-
 app.get("/", async () => {
   const tables = await querier("sqlite_schema")
     .select("*");
