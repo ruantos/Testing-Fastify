@@ -1,9 +1,10 @@
-import { knex, Knex } from "knex";
+import knex from "knex";
+import type { Knex } from "knex";
 
 const database_path = "./database/database.db"; 
 
 export const config: Knex.Config = {
-  client: "sqlite",
+  client: "sqlite3",
   connection: {
     filename: database_path
   },
