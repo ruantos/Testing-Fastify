@@ -18,6 +18,9 @@ app.get("/", async () => {
 app.listen({
   port: 3000,
   host: "localhost"
-}).then(() => {
-  console.log("HTTP server running on http://localhost:3000");
+}, (err, address) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log(`HTTP server running at ${address}`);
 });
