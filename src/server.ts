@@ -1,6 +1,7 @@
 import Fastify from "fastify";
 import { querier } from "./database.js";
 import { randomUUID } from "node:crypto";
+import { env } from "../env/index.js";
 
 const app = Fastify({
   logger: true
@@ -25,11 +26,12 @@ app.post("/", async () => {
 });
 
 app.listen({
-  port: 3000,
+  port: env.PORT,
   host: "localhost"
 }, (err, address) => {
   if (err) {
     console.log(err);
   }
   console.log(`HTTP server running at ${address}`);
+  console.log("Smile more! :)");
 });
