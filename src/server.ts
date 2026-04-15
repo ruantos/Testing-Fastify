@@ -2,18 +2,15 @@ import Fastify from "fastify";
 import { querier } from "./database.js";
 import { randomUUID } from "node:crypto";
 import { env } from "../env/index.js";
+import { transactionsRoutes } from "./routes/transactions.js";
+
+
 
 const app = Fastify({
   logger: true
 });
 
-app.get("/", async () => {
-  const tables = await querier("sqlite_schema")
-    .select("*");
-
-  return tables;
-
-});
+app.register(transactionsRoutes);
 
 app.post("/", async () => {
   const transaction = await querier("transactions").insert({
