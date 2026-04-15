@@ -5,6 +5,8 @@
     "moduleResolution": "NodeNext",
     "strict": true,
     "esModuleInterop": true,
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
     "types": ["node"]
-  }
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "env/**/*.ts", "knexfile.ts"]
 }
