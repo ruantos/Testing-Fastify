@@ -26,6 +26,14 @@ export async function transactionsRoutes(app: FastifyInstance) {
     return { transactions };
   });
 
+  app.get("/summary", async () => {
+    const summary = await querier("transactions")
+      .sum("amount", { as: "amount" })
+      .first();
+
+    return { summary };
+  });
+
 
   app.post("/", async (request, reply) => {
     const bodySchema = z.object({
